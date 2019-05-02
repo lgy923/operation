@@ -1,0 +1,3 @@
+apt-get install mysql-server  # 安装mysql
+
+mysql -u root -p  # 连接服务器

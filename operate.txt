@@ -1,0 +1,132 @@
+﻿通过scp拷贝其他终端的文件
+scp p1901@10.2.1.78:/Users/p1901/nginx-1.12.2.tar.gz ./
+
+生成公钥
+ssh-keygen 
+ssh-copy-id p1901@10.2.1.78
+scp datalog.txt p1901@10.2.1.78:/Users/p1901/
+
+进入密钥文件夹
+cd ~/.ssh/
+
+authorized_keys  # authorized_keys的权限必须是rw-------(600)
+
+ssh admin@10.2.1.153
+
+安装ssh服务
+apt install openssh-server
+
+vim编辑器快捷键
+    i 是在光标之前进入编辑模式 insert
+    I 是在行首进入编辑模式
+    a append 光标之后进入编辑模式
+    A 在行尾进入编辑模式
+    x 表示光标所在的字符，并且不会进入到编辑模式
+    u 表示撤回 undo
+    number+gg 快速调到末行
+    ：$ 跳到最后一行
+    
+    esc 切换到命令模式
+    dd 删除光标所在和下面的number行
+    yy 复制光标所在的行
+    p 粘贴
+    ：进入长命令模式
+    ：wq 保存和退出
+    ：q! 强制退出
+    ：set number 显示行标
+
+
+安装python3:  https://blog.csdn.net/weixin_37275456/article/details/80781755
+   
+    解压tar文件:tar -zxvf Python-3.6.5.tgz
+    进入文件夹：cd Python-3.6.5/
+    指定安装目录：./configure --prefix=/usr/local/python3
+    编译源文件：make
+    正式安装：make install
+    建立软连接：ln -s /usr/local/python3/bin/python3 /usr/bin/python3 
+                ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3 
+    遇到zlib问题：
+        yum install zlib* -y
+    重新安装：
+        make install
+
+
+安装WPS
+    解压wps-office_10.1.0.6758_x86_64.tar.xz文件
+   sh wps 
+
+# Modify the hostname
+    $ hostname P1901lgy
+    $ su
+
+
+# Install the Python3
+    $ wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
+    $ tar -zxvf Python-3.6.5.tgz
+    $ mkdir /usr/local/python3
+    $ ./configure --prefix=/usr/local/python3
+    $ make
+    $ make install
+
+
+
+# View software whether install查看软件是否存在
+    $ yum list | grep zlib*       $ rpm -qa | grep zlib
+
+
+
+# Uninstall software卸载软件
+    $ rpm -nodeps -e zlib-1.2.3-29.el6.x86_64
+
+
+
+# Mount the ISO image挂载ISO镜像
+    $ mkdir /mnt/cdrom
+    $ mount /dev/cdrom /mnt/cdrom
+
+
+
+# Install nginx requires the PCRE library
+    $ yum -y install zlib zlib-level openssl openssl--devel pcre pcre-devel
+    
+    
+# ubuntu安装notepad++
+	snap install notepad-plus-plus
+
+
+# 安装git
+    安装liberror-perl
+    sudo apt-get update
+    sudo apt-get install liberror-perl
+
+    安装git
+    apt-get install git
+
+
+# 安装yum
+    sudo apt-get install yum
+    
+
+# 安装notepad++
+	sudo apt install snapd
+	sudo apt install snapd snapd-xdg-open
+	snap install notepad-plus-plus
+
+# 安装pip
+	apt-get install python-pip python-dev build-essential
+	pip install --upgrade pip
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+	

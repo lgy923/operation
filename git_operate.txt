@@ -1,0 +1,146 @@
+﻿# Linux安装git
+    sudo apt-get install git
+    
+
+# 设置git 用户名和邮箱
+	git config --global user.name "Your Name"
+	git config --global user.email "email@example.com"
+	
+
+
+vim readme.txt  # 创建并修改文件
+	Git is a version control system.
+	Git is free software.
+
+
+git init  # 创建仓库
+git add readme.txt  # 把文件添加到仓库
+git commit -m "wrote a readme.txt file"  # 把文件提交到仓库
+
+vim readme.txt  # 再一次修改文件
+	Git is a distributed version control system.
+	Git is free software.
+
+
+git status  # 查看仓库当前的状态
+git diff readme.txt  # 查看文件修改的地方（内容）
+git add readme.txt  # 再次添加文件到仓库
+git commit -m "add distributed"  # 再一次提交到仓库
+git status  # 查看仓库当前状态
+
+
+vim readme.txt  # 再一次修改文件
+	Git is a distributed version control system.
+	Git is free software distributed under the GPL.
+	
+	
+git add readme.txt  # 添加文件到仓库
+git commit -m "append GPL"  # 提交文件到仓库
+git log  # 显示修改文件的日志记录
+git log --pretty=oneline  # 简洁显示
+
+
+git reset --hard HEAD^  # 回退到上一个版本
+cat readme.txt  # 查看文件（已经还原到上一个版本状态）
+	Git is a distributed version control system.
+	Git is free software.
+
+
+git log  # 显示的记录，会少一个记录（少了最近一次）
+
+git reset --hard 1094a  # 回退到制定版本（状态）
+cat readme.txt  # 查看文件
+	Git is a distributed version control system.
+	Git is free software distributed under the GPL.
+
+
+git relog  # 用来记录每次命令
+
+
+vim readme.txt  # 修改文件
+	Git is a distributed version control system.
+	Git is free software distributed under the GPL.
+	Git has a mutable index called stage.
+	
+
+git reset HEAD readme.txt  # 把暂存区的修改回退到工作区
+
+
+git checkout -- readme.txt  # 把readme.txt文件在工作区的修改全部撤销
+							# 用版本库里的版本替换工作区的版本，“一键还原”
+	
+
+
+git remote add origin git@github.com:18723398659/learngit.git  # 关联远程库，命名为origin
+
+git remote -v  # 查看已经关联的远程库
+git remote remove origin  # 删除已经关联的远程库
+
+git push -u origin master  # 第一次推送master分支的所有内容
+git push origin master  # 此后每次提交，使用该命令推送最新修改
+
+
+git clone git@github.com:18723398659/gitskills.git
+git clone https://github.com/18723398659/gitskills.git  # 从远程库clone一个本地库
+
+
+git branch dev  # 创建分支
+git checkout dev  # 切换到分支
+
+git checkout -b dev  # 相当于上面两条命令
+	
+git branch  # 列出所有本地分支
+git branch -r  # 列出所有远程分支
+git branch -a  # 列出所有远程分支和本分支
+
+git branch -m <oldbranchname> <newbranchname>  # 重命名分支
+
+git merge dev  # 合并分支
+
+git branch -d dev  # 删除分支
+
+git log --graph  # 可以查看到分支合并图
+
+git log filename.txt  # 查看文件的commit记录
+
+git merge --no-ff -m "merge with no-ff" dev  # 表示禁用Fast forward
+
+git stash  # 暂时保存当前分支的工作环境
+
+git stash list  # 列出当前分支暂时保存的工作
+
+git stash apply  # 恢复stash存储的工作环境
+git stash drop  # 删除stash内容
+
+git stash pop  # 恢复的同时，也把stash删除了
+
+git remote -v  # 查看远程仓库的现有地址
+
+git push python_demo1 -d dev3  # 删除远程库（python_demo1）下的远程分支dev3
+
+git pull origin master:master  # 将远程origin主机的master（冒号前）分支合并到当前master（冒号后）分支
+
+git fetch --p  # 更新分支
+git fetch --all  # 将远程主机的更新全部取回本地
+
+git 中 ~ 和 ^ 的区别-------------
+HEAD~ === HEAD^ === HEAD^1
+HEAD~2 === HEAD^^ === HEAD^1^1
+
+git pull --rebase origin master  #把远程库中的更新合并到本地库中
+
+git fetch --all  # 将远程仓库的更新全部取回本地
+
+git pull origin master  # 从远程仓库获取最新版本并merge到本地-->等同于
+        git fetch origin master  +  git merge origin/master
+
+git add .  # 添加变化的文件到暂存区
+git add *  # 添加所有文件到暂存区
+
+git rm -rf --cached *  # 删除分支或暂存区的文件
+
+
+
+
+
+	

@@ -1,0 +1,50 @@
+﻿邮箱信息：
+	Operating system centos-7-x86_64-bbr has been successfully installed on server 		localhost.localdomain [104.224.180.208].
+
+	Your temporary root password: JiQKkjAR3g7S
+	Your SSH port: 26468
+
+
+搬网工服务器购买（信息可以随便填，建议使用网易邮箱）
+
+sudo apt-get install openssh-server  # 安装ssh服务的库
+
+ssh root@104.224.180.208 -p 26468  # 登录购买的服务器
+
+pip install shadowsocks  # 安装shadowsocks软件
+
+vim shadow.conf
+
+{
+ 	"server":"my_server_ip",
+	"local_address": "127.0.0.1",
+	"local_port":1080,
+	"port_password": {
+  	    "8381": "foobar1",  # 8381为端口号（自定义43000-65535）
+  	    "8382": "foobar2",  # foobar为密码（自定义）
+   		"8383": "foobar3",
+    	"8384": "foobar4"
+	},
+ 	"timeout":300,
+	"method":"aes-256-cfb",
+ 	"fast_open": false
+}
+
+
+# 这个文件不能有注释
+
+ssserver -c /etc/shadow.conf -d start  # 运行编辑的配置文件
+
+回到本机安装shadowsock
+安卓手机端：https://github.com/shadowsocks/shadowsocks-android/releases
+微软电脑端：https://github.com/shadowsocks/shadowsocks-windows/releases
+苹果电脑端：https://github.com/shadowsocks/ShadowsocksX-NG/releases
+
+
+62811本机
+62812
+62813手机
+
+62835向俊桥
+62836张益川
+62836向俊桥
